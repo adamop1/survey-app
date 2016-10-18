@@ -1,0 +1,80 @@
+.wrapper-cont
+  .h-cont
+    =image_tag "logo.png", class: "logo"
+  .main-cont
+    .l-cont
+      %h1.htext Find out what is your BMI
+      %p.body-text Body mass index (BMI)is a measure of body fat based on height and weight that applies to adult men and women, and then categorize that person as underweight, normal weight, overweight, or obese
+    .r-cont
+      .r-cont-form
+        = form_for :survey, url: surveys_path do |f|
+          .h3-cont
+            %h3 What is your gender?
+          .options-cont
+            %label.mdl-radio.mdl-js-radio.mdl-js-ripple-effect{:for => "option-1"}
+              %input#option-1.mdl-radio__button{:checked => "checked", :name => "a1", :type => "radio", :value => "Male"}
+              %span.mdl-radio__label Male
+            %br
+            %label.mdl-radio.mdl-js-radio.mdl-js-ripple-effect{:for => "option-2"}
+              %input#option-2.mdl-radio__button{:name => "a1", :type => "radio", :value => "Female"}
+              %span.mdl-radio__label Female
+          %br
+          .h3-cont
+            %h3 How old are you?
+          .mdl-textfield.mdl-js-textfield
+            %input#sample2.mdl-textfield__input{:name => "a1", :pattern => "-?[0-9]*(\\.[0-9]+)?", :type => "text"}/
+            %label.mdl-textfield__label{:for => "sample2"} Age...
+            %span.mdl-textfield__error Input is not a number!
+          %br
+          %br
+          .h3-cont
+            %h3 How tall are you?
+          .select-cont
+            %span.select-wrap
+              = f.select(:a3, options_for_select([['3', 7], ['4', 7], ['5', 7], ['6', 7], ['7', 7]]))
+            %span.select-wrap
+              = f.select(:a4, options_for_select([['3', 7], ['4', 7], ['5', 7], ['6', 7], ['7', 7]]))
+          %br
+          %br
+          .h3-cont
+            %h3 How much do you weight?
+          = f.text_field(:a5)
+          %br
+          %br
+          .q-sec.hide
+            %p Question 1
+            = f.radio_button(:a6, "Male")
+            = f.label(:a6_male, "Male")
+            %br
+            = f.radio_button(:a6, "Female")
+            = f.label(:a6_female, "Female")
+          .q-sec.hide
+            %p Question 2
+            = f.radio_button(:a7, "Male")
+            = f.label(:a7_male, "Male")
+            %br
+            = f.radio_button(:a7, "Female")
+            = f.label(:a7_female, "Female")
+          .q-sec.hide
+            %p Question 3
+            = f.radio_button(:a8, "Male")
+            = f.label(:a8_male, "Male")
+            %br
+            = f.radio_button(:a8, "Female")
+            = f.label(:a8_female, "Female")
+          .q-sec.hide
+            %p Question 4
+            = f.radio_button(:a9, "Male")
+            = f.label(:a9_male, "Male")
+            %br
+            = f.radio_button(:a9, "Female")
+            = f.label(:a9_female, "Female")
+          .q-sec.hide
+            %p Question 5
+            = f.radio_button(:a10, "Male")
+            = f.label(:a10_male, "Male")
+            %br
+            = f.radio_button(:a10, "Female")
+            = f.label(:a10_female, "Female")
+          %p
+          = f.submit
