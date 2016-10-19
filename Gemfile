@@ -11,6 +11,7 @@ gem 'jquery-rails', '~> 4.2'
 gem 'turbolinks', '~> 5.0'
 gem 'material-design-rails', '~> 0.1'
 gem 'material_icons'
+gem 'rollbar'
 
 group :development do
   gem 'byebug', '~> 9.0'

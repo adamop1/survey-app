@@ -15,3 +15,29 @@
 //= require turbolinks
 //= require_tree .
 //= require material.min
+$(document).ready(function(){
+    $("body").on( "click", ".q1next-button", function() {
+        $(".section-two").addClass("hide");
+        $(".section-three").removeClass("hide");
+    });
+    $("body").on( "click", ".q2next-button", function() {
+        $(".section-three").addClass("hide");
+        $(".section-four").removeClass("hide");
+    });
+    $("body").on( "click", ".q3next-button", function() {
+        $(".section-four").addClass("hide");
+    });
+
+    $("body").on( "click", ".q1prev-button", function() {
+        $(".section-two").addClass("hide");
+        $(".section-one").removeClass("hide");
+    });
+    $("body").on( "click", ".q2prev-button", function() {
+        $(".section-three").addClass("hide");
+        $(".section-two").removeClass("hide");
+    });
+    $("body").on( "click", ".q3prev-button", function() {
+        $(".section-four").addClass("hide");
+        $(".section-three").removeClass("hide");
+    });
+});

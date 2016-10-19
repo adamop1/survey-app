@@ -26,7 +26,6 @@
             %label.mdl-textfield__label{:for => "sample2"} Age...
             %span.mdl-textfield__error Input is not a number!
           %br
-          %br
           .h3-cont
             %h3 How tall are you?
           .select-cont
@@ -35,11 +34,12 @@
             %span.select-wrap
               = f.select(:a4, options_for_select([['3', 7], ['4', 7], ['5', 7], ['6', 7], ['7', 7]]))
           %br
-          %br
           .h3-cont
             %h3 How much do you weight?
-          = f.text_field(:a5)
-          %br
+          .mdl-textfield.mdl-js-textfield
+            %input#sample2.mdl-textfield__input{:name => "a1", :pattern => "-?[0-9]*(\\.[0-9]+)?", :type => "text"}/
+            %label.mdl-textfield__label{:for => "sample2"} Weight in pounds...
+            %span.mdl-textfield__error Input is not a number!
           %br
           .q-sec.hide
             %p Question 1
@@ -76,5 +76,10 @@
             %br
             = f.radio_button(:a10, "Female")
             = f.label(:a10_female, "Female")
-          %p
-          = f.submit
+          .btt-section
+            = button_tag 'Previous', type: 'button', class: 'mdl-button mdl-js-button mdl-button--raised mdl-button--accent'
+            = button_tag 'Next', type: 'button', class: 'mdl-button mdl-js-button mdl-button--raised mdl-button--accent'
+            %span.hide
+              = f.submit 'Done', :class => ' mdl-button mdl-js-button mdl-button--raised mdl-button--accent'
+
+
